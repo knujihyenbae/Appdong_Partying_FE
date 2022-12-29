@@ -121,10 +121,13 @@
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
+            android:layout_gravity="end"
+            android:layout_margin="16dp"
             android:src="@drawable/ic_baseline_add_24"
-            app:backgroundTint="#FF9090"
-            android:layout_margin="16dp" />
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/partyingColor"
+            app:layout_anchor="@+id/partyRecyclerView"
+            app:layout_anchorGravity="end|bottom" />
 
     </LinearLayout>
 
