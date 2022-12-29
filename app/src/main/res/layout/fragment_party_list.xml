@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".partyList.PartyListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:minHeight="0dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/choiced_tag_btn"
+                android:layout_gravity="center_horizontal"
+                android:text="스터디"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="13dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/unchoiced_tag_btn"
+                android:layout_gravity="center"
+                android:text="책/독서"
+                android:gravity="top|center"
+                android:textColor="@color/tag"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="13dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/unchoiced_tag_btn"
+                android:layout_gravity="center"
+                android:text="클래스 수강"
+                android:gravity="top|center"
+                android:textColor="@color/tag"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="13dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/pot_all"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/pot_tag_btn"
+                android:drawableRight="@drawable/ic_outline_arrow_drop_down_24"
+                android:layout_gravity="center"
+                android:text="전체"
+                android:textColor="@color/white"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="13dp"/>
+
+            <Button
+                android:id="@+id/pot_km"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/pot_tag_btn"
+                android:drawableRight="@drawable/ic_outline_arrow_drop_down_24"
+                android:layout_gravity="center"
+                android:text="거리 순"
+                android:textColor="@color/white"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="13dp"/>
+
+            <Button
+                android:id="@+id/pot_map"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/pot_tag_btn"
+                android:drawableLeft="@drawable/ic_outline_map_24"
+                android:layout_gravity="center"
+                android:text="지도"
+                android:gravity="top|center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="13dp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/partyRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="#FF9090"
+            android:layout_margin="16dp" />
+
+    </LinearLayout>
+
+</FrameLayout>
