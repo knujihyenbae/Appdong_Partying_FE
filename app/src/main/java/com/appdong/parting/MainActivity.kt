@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.bottomBtn4.setOnClickListener() {
             supportFragmentManager.beginTransaction().replace(R.id.frame_layout, MypageFragment()).addToBackStack(null).commit()
+            //supportFragmentManager.beginTransaction().replace(R.id.frame_layout, DetailInformationFragment()).addToBackStack(null).commit()
             toolbar.title = "마이페이지"
         }
     }
