@@ -34,7 +34,7 @@ class PartyListAdapter(val partyList:MutableList<PartyList>): RecyclerView.Adapt
         binding.loaction.text=partyList[position].loaction
         binding.participatePeople.text=partyList[position].participateNum
 //        binding.potLocationImg.setImageResource(R.drawable.cafe1)
-        binding.potLocationImg.setImageResource(R.drawable.study)
+        binding.partyLocationImg.setImageResource(R.drawable.study)
 //        binding.potLocationImg.setImageResource(R.drawable.study)
 //        binding.petsitterImg.setImageResource(R.drawable.example1)
         binding.partyName.text=partyList[position].partyName
