@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.appdong.parting.DetailInformationFragment
 import com.appdong.parting.PartyOpenActivity
 import com.appdong.parting.R
 import com.appdong.parting.databinding.FragmentPartyListBinding
@@ -46,7 +47,7 @@ class PartyListFragment : Fragment() {
         binding.partyRecyclerView.adapter=potListAdapter
         potListAdapter.setItemClickListener(object : PartyListAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
-//                loadFragment()
+                loadFragment(DetailInformationFragment())
             }
 
         })
