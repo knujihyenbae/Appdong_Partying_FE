@@ -76,7 +76,7 @@
             android:clickable="true">
 
             <ImageView
-                android:id="@+id/pot_location_img"
+                android:id="@+id/party_location_img"
                 android:layout_width="327dp"
                 android:layout_height="108dp"
                 android:scaleType="centerCrop"

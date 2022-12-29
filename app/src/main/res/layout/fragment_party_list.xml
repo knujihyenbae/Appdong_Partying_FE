@@ -68,7 +68,7 @@
             android:layout_marginTop="10dp">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/pot_all"
+                android:id="@+id/party_all"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:layout_marginLeft="10dp"
@@ -82,7 +82,7 @@
                 android:textSize="13dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/pot_km"
+                android:id="@+id/party_km"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:layout_marginLeft="10dp"
@@ -95,7 +95,7 @@
                 android:textSize="13dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/pot_map"
+                android:id="@+id/party_map"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:layout_marginLeft="10dp"
