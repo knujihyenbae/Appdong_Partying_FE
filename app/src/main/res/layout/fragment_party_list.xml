@@ -20,7 +20,7 @@
             android:orientation="horizontal"
             android:layout_marginLeft="10dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:minHeight="0dp"
@@ -34,19 +34,19 @@
                 android:fontFamily="@font/noto_sans_kr_bold"
                 android:textSize="13dp"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
-                android:layout_height="23dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/unchoiced_tag_btn"
-                android:layout_gravity="center"
-                android:text="책/독서"
-                android:gravity="top|center"
-                android:textColor="@color/tag"
                 android:fontFamily="@font/noto_sans_kr_bold"
-                android:textSize="13dp"/>
+                android:gravity="top|center"
+                android:text="책/독서"
+                android:textColor="@color/tag"
+                android:textSize="13dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
                 android:layout_marginLeft="10dp"
@@ -67,7 +67,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/pot_all"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
@@ -75,12 +75,13 @@
                 android:background="@drawable/pot_tag_btn"
                 android:drawableRight="@drawable/ic_outline_arrow_drop_down_24"
                 android:layout_gravity="center"
+                android:textAlignment="center"
                 android:text="전체"
                 android:textColor="@color/white"
                 android:fontFamily="@font/noto_sans_kr_bold"
                 android:textSize="13dp"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/pot_km"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
@@ -93,7 +94,7 @@
                 android:fontFamily="@font/noto_sans_kr_bold"
                 android:textSize="13dp"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/pot_map"
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"

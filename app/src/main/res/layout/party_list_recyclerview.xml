@@ -47,7 +47,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/participate_people"
                 android:layout_width="41dp"
                 android:layout_height="16dp"
@@ -60,7 +60,8 @@
                 android:textSize="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.476" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -125,7 +126,7 @@
             android:orientation="horizontal"
             android:layout_marginBottom="10dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_tag1"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
@@ -138,7 +139,7 @@
                 android:textColor="@color/text"
                 android:textSize="13dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_tag2"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
@@ -151,7 +152,7 @@
                 android:text="#공무원"
                 android:textColor="@color/text"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_tag3"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
