@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appdong.parting.databinding.FragmentHomeBinding
-
+import com.appdong.parting.partyList.PartyListFragment
 
 
 class HomeFragment : Fragment() {
@@ -84,7 +84,8 @@ class HomeFragment : Fragment() {
                 //각각 클릭 시 이벤트 작성
                 when(partyItemList[position]){
                     partyItemList[0] -> {
-                        Log.d("jhb", "${partyItemList[0].name}")}
+                        Log.d("jhb", "${partyItemList[0].name}")
+                        loadFragment(PartyListFragment())}
                     partyItemList[1] -> {
                         Log.d("jhb", "${partyItemList[1].name}")}
                     partyItemList[2] -> {
@@ -133,6 +134,14 @@ class HomeFragment : Fragment() {
         binding.homeBanner4.setOnClickListener(){
             Log.d("jhb", "홈배너4")
         }
+    }
+
+    private fun loadFragment(fragment: Fragment){
+        Log.d("clickTest","click!->"+fragment.tag)
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame_layout,fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 }
