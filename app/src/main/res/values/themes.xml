@@ -28,4 +28,9 @@
         </item>
     </style>
 
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/noto_sans_kr_bold</item>
+    </style>
+
+
 </resources>
