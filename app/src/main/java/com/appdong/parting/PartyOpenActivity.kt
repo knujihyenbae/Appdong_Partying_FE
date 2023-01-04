@@ -155,7 +155,7 @@ class PartyOpenActivity : AppCompatActivity() {
     private fun init2() {
         recyclerView = binding.recyclerViewCategory
         recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL)
         categoryItemList = ArrayList()
         addDataToCategoryList()
 
