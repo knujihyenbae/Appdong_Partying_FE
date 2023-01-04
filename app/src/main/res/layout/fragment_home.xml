@@ -75,41 +75,40 @@
                     app:layout_constraintTop_toBottomOf="@id/home_constarint1">
 
                     <ImageView
-                        android:id="@+id/home_calender"
+                        android:id="@+id/fragment_home_calender"
                         android:layout_width="144dp"
                         android:layout_height="144dp"
                         android:src="@drawable/home_calender"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/home_dday_constraint"
+                        app:layout_constraintEnd_toStartOf="@id/fragment_home_dday_constraint"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/home_dday_constraint"
+                        android:id="@+id/fragment_home_dday_constraint"
                         android:layout_width="144dp"
                         android:layout_height="144dp"
                         android:background="@drawable/home_fragment_dday"
-                        app:layout_constraintStart_toEndOf="@id/home_calender"
+                        app:layout_constraintStart_toEndOf="@id/fragment_home_calender"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent">
 
+                        <TextView
+                            android:id="@+id/fragment_home_dday_title"
+                            android:layout_width="97dp"
+                            android:layout_height="26dp"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="ㅇㅇㅇ 하는 모임"
+                            android:textAlignment="center"
+                            android:textColor="#FF9090"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
                             <TextView
-                                android:id="@+id/home_dday_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="ㅇㅇㅇ 하는 모임"
-                                android:textStyle="bold"
-                                android:layout_marginTop="20dp"
-                                android:textSize="13sp"
-                                android:textColor="#FF9090"
-                                android:textAlignment="center"
-                                android:gravity="center"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                />
-                            <TextView
-                                android:id="@+id/home_dday_counter"
+                                android:id="@+id/fragment_home_dday_counter"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="D-3"
@@ -120,7 +119,7 @@
                                 android:gravity="center"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/home_dday_title"/>
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_home_dday_title"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

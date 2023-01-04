@@ -54,15 +54,13 @@ class HomeFragment : Fragment() {
         init()
 
         // 홈캘린터 클릭
-        binding.homeCalender.setOnClickListener() {
+        binding.fragmentHomeCalender.setOnClickListener() {
             var intent = Intent(context, PartyOpenActivity::class.java)
             startActivity(intent)
         }
         
-        //디데이 클릭
-        binding.homeDdayConstraint.setOnClickListener(){
-            Log.d("jhb", "홈프래그먼트 디데이 모임")
-        }
+        //디데이 클릭리스너
+        dDay()
 
         // 배너 클릭
         homeBanner()
@@ -182,6 +180,15 @@ class HomeFragment : Fragment() {
             }else{
                 false
             }
+        }
+    }
+
+    private fun dDay(){
+        binding.fragmentHomeDdayConstraint.setOnClickListener(){
+            Log.d("jhb", "홈프래그먼트 디데이 모임")
+            //클릭 리스너가아니고, 그냥 자체로 빼야됨 가만히 있어도 텍스트 서버에서 받아와서 바꿔주기
+            binding.fragmentHomeDdayTitle.text = "세모 모임"
+            binding.fragmentHomeDdayCounter.text = "D-2"
         }
     }
 }
