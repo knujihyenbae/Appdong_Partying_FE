@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 검색바 관련
-        Search()
+        search()
 
         // 모임 테마 리싸이클러
         init()
@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
         }
 
         // 배너 클릭
-        HomeBanner()
+        homeBanner()
 
     }
 
@@ -132,7 +132,7 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun HomeBanner() {
+    private fun homeBanner() {
         binding.fragmentHomeBanner1.setOnClickListener(){
             Log.d("jhb", "홈배너1")
         }
@@ -155,17 +155,17 @@ class HomeFragment : Fragment() {
         transaction.commit()
     }
 
-    private fun Search(){
+    private fun search(){
         var inputSearch: String? = null
 
-        binding.fragmentHomeSearchEditText.setOnKeyListener { v, keyCode, event ->
+        binding.fragmentHomeSearchEditText.setOnKeyListener { _, keyCode, event ->
             if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                 // 다운 이나 엔터 눌렀을 때 실행
                 //fragment 키보드 내리기
                 val mInputMethodManager =
                     requireContext().getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                 mInputMethodManager.hideSoftInputFromWindow(
-                    binding.fragmentHomeSearchEditText.getWindowToken(),
+                    binding.fragmentHomeSearchEditText.windowToken,
                     0
                 )
 
@@ -173,6 +173,10 @@ class HomeFragment : Fragment() {
                 inputSearch = binding.fragmentHomeSearchEditText.text.toString()
                 //입력값 저장된거 토스트로 띄워서 확인
                 Toast.makeText(context, inputSearch, Toast.LENGTH_SHORT).show()
+
+                //edittext 초기화 시켜주기
+                binding.fragmentHomeSearchEditText.text = null
+
 
                 true
             }else{
