@@ -13,7 +13,7 @@
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,10 +82,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/party_open_constraint1">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:nestedScrollingEnabled="false"
                     android:id="@+id/recyclerView"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -171,10 +171,10 @@
                     android:textColor="#FF9090"
                     android:textSize="15sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -209,23 +209,24 @@
                         android:id="@+id/partyTitleEditText"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="#D3D3D3"
                         android:hint="파티 제목을 입력해 주세요"
                         android:textColorHint="#D3D3D3"
-                        android:backgroundTint="#D3D3D3"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
                         android:id="@+id/partyTitleEditTextCounter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0/20"
-                        android:textSize="13sp"
-                        android:textColor="#D3D3D3"
                         android:layout_marginEnd="4dp"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="0/20"
+                        android:textColor="#D3D3D3"
+                        android:textSize="13sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -250,23 +251,24 @@
                         android:id="@+id/partyHashtagEditText"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="#D3D3D3"
                         android:hint="#해시태그"
                         android:textColorHint="#D3D3D3"
-                        android:backgroundTint="#D3D3D3"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
                         android:id="@+id/partyHashtagEditTextCounter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0/20"
-                        android:textSize="13sp"
-                        android:textColor="#D3D3D3"
                         android:layout_marginEnd="4dp"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="0/20"
+                        android:textColor="#D3D3D3"
+                        android:textSize="13sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -294,9 +296,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:background="@drawable/party_open_when"
+                        android:gravity="center"
                         android:text="년. 원. 일"
                         android:textAlignment="center"
-                        android:gravity="center"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toStartOf="@+id/partyTime"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -306,9 +308,9 @@
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/party_open_when"
+                        android:gravity="center"
                         android:text="시"
                         android:textAlignment="center"
-                        android:gravity="center"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -375,10 +377,11 @@
                     android:id="@+id/partyPeopleNumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintTop_toBottomOf="@+id/partyPeopleNumberTextView"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/partyPeopleNumberTextView"
                     app:layout_constraintTop_toTopOf="parent">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -390,36 +393,39 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="232dp"
                         android:layout_height="43dp"
                         android:background="@drawable/rectangle_1"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent">
+                        app:layout_constraintTop_toTopOf="parent">
+
                         <EditText
                             android:id="@+id/partyPeopleNumberEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@null"
                             android:hint="3"
-                            android:textSize="16sp"
                             android:inputType="number"
                             android:maxLength="2"
                             android:textAlignment="center"
-                            android:background="@null"
-                            app:layout_constraintStart_toStartOf="parent"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"/>
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="명"
-                            android:textSize="16sp"
                             android:textColor="#676767"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/partyPeopleNumberEditText"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"/>
+                            app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -487,7 +493,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -517,22 +523,23 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
+                    android:background="@null"
                     android:gravity="top"
                     android:hint="파티 목적, 활동 내용, 예상 소요 시간 등을 입력하세요."
-                    android:background="@null"
-                    android:textSize="13sp"
-                    android:textColorHint="#D3D3D3"/>
+                    android:textColorHint="#D3D3D3"
+                    android:textSize="13sp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <TextView
                 android:id="@+id/partyIntroduceEditTextCounter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
                 android:text="0/200"
                 android:textColor="#D3D3D3"
-                android:layout_marginEnd="24dp"
-                app:layout_constraintTop_toBottomOf="@+id/party_open_constraint11"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/party_open_constraint11" />
 
             <TextView
                 android:id="@+id/party_open_finish"
@@ -541,32 +548,33 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="24dp"
-                android:text="파티 등록 완료"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:textAlignment="center"
-                android:gravity="center"
                 android:background="@drawable/party_finish_round"
+                android:gravity="center"
+                android:text="파티 등록 완료"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/party_open_constraint11"/>
+                app:layout_constraintTop_toBottomOf="@+id/party_open_constraint11" />
 
             <DatePicker
                 android:id="@+id/datePickerSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:datePickerMode="spinner"
                 android:calendarViewShown="false"
-                app:layout_constraintStart_toStartOf="parent"
+                android:datePickerMode="spinner"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/party_open_finish"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/party_open_finish" />
+
             <TimePicker
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:timePickerMode="spinner"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/datePickerSpinner"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/datePickerSpinner" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
