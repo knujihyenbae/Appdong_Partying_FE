@@ -1,12 +1,17 @@
 package com.appdong.parting
 
+import android.content.Context
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appdong.parting.databinding.FragmentHomeBinding
@@ -19,6 +24,8 @@ class HomeFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var partyItemList: ArrayList<PartyItem>
     private lateinit var partyItemAdapter: PartyItemAdapter
+
+
 
 
 
@@ -39,6 +46,22 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //1. 키보드 InputMethodManager 변수 선언
+        var imm : InputMethodManager? = null
+        // 2. 키보드 InputMethodManager 세팅
+
+        // 검색바 관련
+        binding.fragmentHomeSearchEditText.setOnKeyListener { v, keyCode, event ->
+            if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                // 다운 이나 엔터 눌렀을 때 실행
+
+                true
+            }else{
+                false
+            }
+        }
+
         // 모임 테마 리싸이클러
         init()
 
@@ -63,7 +86,7 @@ class HomeFragment : Fragment() {
 
 
     private fun init() {
-        recyclerView = binding.recyclerView
+        recyclerView = binding.fragmentHomeRecyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = GridLayoutManager(activity, 4)
 
@@ -122,16 +145,16 @@ class HomeFragment : Fragment() {
 
 
     private fun HomeBanner() {
-        binding.homeBanner1.setOnClickListener(){
+        binding.fragmentHomeBanner1.setOnClickListener(){
             Log.d("jhb", "홈배너1")
         }
-        binding.homeBanner2.setOnClickListener(){
+        binding.fragmentHomeBanner2.setOnClickListener(){
             Log.d("jhb", "홈배너2")
         }
-        binding.homeBanner3.setOnClickListener(){
+        binding.fragmentHomeBanner3.setOnClickListener(){
             Log.d("jhb", "홈배너3")
         }
-        binding.homeBanner4.setOnClickListener(){
+        binding.fragmentHomeBanner4.setOnClickListener(){
             Log.d("jhb", "홈배너4")
         }
     }

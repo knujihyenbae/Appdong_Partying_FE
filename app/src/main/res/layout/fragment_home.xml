@@ -36,7 +36,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         android:background="@drawable/searchbar_round">
                         <ImageView
-                            android:id="@+id/searchImg"
+                            android:id="@+id/fragment_home_searchImg"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_baseline_search_24"
@@ -45,15 +45,18 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             android:layout_marginStart="32dp"/>
                         <EditText
-                            android:id="@+id/searchEditText"
+                            android:id="@+id/fragment_home_searchEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:imeOptions="actionSearch"
                             android:hint="세부 카테고리 검색"
                             android:textSize="14sp"
                             android:textColorHint="#D3D3D3"
                             android:background="@null"
-                            app:layout_constraintStart_toEndOf="@+id/searchImg"
+                            app:layout_constraintStart_toEndOf="@+id/fragment_home_searchImg"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -131,7 +134,7 @@
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:nestedScrollingEnabled="false"
-                        android:id="@+id/recyclerView"
+                        android:id="@+id/fragment_home_recyclerView"
                         android:layout_width="320dp"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -158,32 +161,100 @@
                             android:layout_height="match_parent"
                             >
 
-                            <ImageView
-                                android:id="@+id/home_banner1"
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/fragment_home_banner1"
                                 android:layout_width="248dp"
                                 android:layout_height="126dp"
-                                android:background="@drawable/cardview_home"/>
+                                android:background="@drawable/cardview_home"
+                                android:padding="4dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/study">
+                                </ImageView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginStart="12dp"
+                                    android:text="ㅇㅇ모임 초대"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent">
+                                </TextView>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/fragment_home_banner2"
+                                android:layout_marginStart="24dp"
+                                android:layout_width="248dp"
+                                android:layout_height="126dp"
+                                android:background="@drawable/cardview_home"
+                                android:padding="4dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/study">
+                                </ImageView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginStart="12dp"
+                                    android:text="ㅇㅇ모임 초대"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent">
+                                </TextView>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/fragment_home_banner3"
+                                android:layout_width="248dp"
+                                android:layout_height="126dp"
+                                android:layout_marginStart="24dp"
+                                android:background="@drawable/cardview_home"
+                                android:padding="4dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/study">
+                                </ImageView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginStart="12dp"
+                                    android:text="ㅇㅇ모임 초대"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent">
+                                </TextView>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/fragment_home_banner4"
+                                android:layout_width="248dp"
+                                android:layout_height="126dp"
+                                android:layout_marginStart="24dp"
+                                android:background="@drawable/cardview_home"
+                                android:padding="4dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/study">
+                                </ImageView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginStart="12dp"
+                                    android:text="ㅇㅇ모임 초대"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent">
+                                </TextView>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                            <ImageView
-                                android:id="@+id/home_banner2"
-                                android:layout_marginStart="20dp"
-                                android:layout_width="248dp"
-                                android:layout_height="126dp"
-                                android:background="@drawable/cardview_home"/>
 
-                            <ImageView
-                                android:id="@+id/home_banner3"
-                                android:layout_marginStart="20dp"
-                                android:layout_width="248dp"
-                                android:layout_height="126dp"
-                                android:background="@drawable/cardview_home"/>
-                            <ImageView
-                                android:id="@+id/home_banner4"
-                                android:layout_marginStart="20dp"
-                                android:layout_width="248dp"
-                                android:layout_height="126dp"
-                                android:background="@drawable/cardview_home"/>
+
 
                         </LinearLayout>
                     </HorizontalScrollView>
