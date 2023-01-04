@@ -28,6 +28,7 @@
 
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fragment_home_search"
                         android:layout_width="320dp"
                         android:layout_height="36dp"
                         app:layout_constraintEnd_toEndOf="parent"

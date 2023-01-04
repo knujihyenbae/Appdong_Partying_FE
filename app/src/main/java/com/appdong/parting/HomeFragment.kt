@@ -6,12 +6,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import androidx.core.content.ContextCompat.getSystemService
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.appdong.parting.databinding.FragmentHomeBinding
@@ -47,20 +47,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //1. 키보드 InputMethodManager 변수 선언
-        var imm : InputMethodManager? = null
-        // 2. 키보드 InputMethodManager 세팅
-
         // 검색바 관련
-        binding.fragmentHomeSearchEditText.setOnKeyListener { v, keyCode, event ->
-            if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                // 다운 이나 엔터 눌렀을 때 실행
-
-                true
-            }else{
-                false
-            }
-        }
+        Search()
 
         // 모임 테마 리싸이클러
         init()
@@ -132,14 +120,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟",))
-        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟",))
+        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟"))
+        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟"))
+        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟"))
+        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟"))
+        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟"))
+        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟"))
+        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟"))
+        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟"))
 
     }
 
@@ -167,4 +155,29 @@ class HomeFragment : Fragment() {
         transaction.commit()
     }
 
+    private fun Search(){
+        var inputSearch: String? = null
+
+        binding.fragmentHomeSearchEditText.setOnKeyListener { v, keyCode, event ->
+            if ((event.action == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                // 다운 이나 엔터 눌렀을 때 실행
+                //fragment 키보드 내리기
+                val mInputMethodManager =
+                    requireContext().getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                mInputMethodManager.hideSoftInputFromWindow(
+                    binding.fragmentHomeSearchEditText.getWindowToken(),
+                    0
+                )
+
+                //edittext에서 입력값 받아오기
+                inputSearch = binding.fragmentHomeSearchEditText.text.toString()
+                //입력값 저장된거 토스트로 띄워서 확인
+                Toast.makeText(context, inputSearch, Toast.LENGTH_SHORT).show()
+
+                true
+            }else{
+                false
+            }
+        }
+    }
 }
