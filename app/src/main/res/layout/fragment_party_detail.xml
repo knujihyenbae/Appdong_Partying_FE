@@ -21,7 +21,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="15dp"
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/ImageView_party_detail"
@@ -32,44 +31,51 @@
                     android:scaleType="centerCrop"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:layout_editor_absoluteX="0dp" />
+
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/textView_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="00하는 모임"
                         android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/noto_sans_kr_bold"
+                        android:text="00하는 모임"
                         android:textColor="@color/black"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
+
                     <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        />
+                        android:layout_weight="1" />
+
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/menu_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/menu_icon"
-                        android:background="@color/white"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="10dp"
-                        />
+                        android:background="@color/white"
+                        android:src="@drawable/menu_icon" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/book_icon"
-                        android:layout_marginLeft="10dp"
                         />
                     <ImageView
                         android:layout_width="wrap_content"
@@ -104,6 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
@@ -121,32 +128,38 @@
                         android:layout_marginLeft="10dp"
                         android:text="#국가고시"/>
                 </LinearLayout>
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
                     android:src="@drawable/deadline" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    <androidx.cardview.widget.CardView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
                         xmlns:card_view="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/card_view_party_profile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="10dp"
                         card_view:cardBackgroundColor="#f7f2f3"
                         card_view:cardCornerRadius="12dp"
                         card_view:cardElevation="3dp"
                         card_view:contentPadding="4dp">
-
                         <LinearLayout
                             android:layout_marginTop="3dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
                             android:orientation="horizontal">
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -171,12 +184,16 @@
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+                    <androidx.cardview.widget.CardView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
                         xmlns:card_view="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/card_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="10dp"
                         card_view:cardBackgroundColor="#f7f2f3"
                         card_view:cardCornerRadius="12dp"
                         card_view:cardElevation="3dp"
@@ -266,12 +283,16 @@
                         </RelativeLayout>
 
                     </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+                    <androidx.cardview.widget.CardView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
                         xmlns:card_view="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/item_party_explanation_card_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="10dp"
                         card_view:cardBackgroundColor="#f7f2f3"
                         card_view:cardCornerRadius="12dp"
                         card_view:cardElevation="3dp"
@@ -310,9 +331,9 @@
                     android:id="@+id/join_party_button"
                     android:layout_width="327dp"
                     android:layout_height="50dp"
-                    android:background="#FF9090"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/choiced_tag_btn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
                     android:text="이 파티에 참여하기"
                     android:textColor="@color/white"
                     android:layout_gravity="center"/>
