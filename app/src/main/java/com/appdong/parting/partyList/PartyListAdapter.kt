@@ -39,9 +39,9 @@ class PartyListAdapter(val partyList:MutableList<PartyList>): RecyclerView.Adapt
 //        binding.petsitterImg.setImageResource(R.drawable.example1)
         binding.partyName.text=partyList[position].partyName
         binding.partyTime.text=partyList[position].partyTime
-        binding.partyTag1.text=partyList[position].partyTag1
-        binding.partyTag2.text=partyList[position].partyTag2
-        binding.partyTag3.text=partyList[position].partyTag3
+        binding.partyTag1Text.text=partyList[position].partyTag1
+        binding.partyTag2Text.text=partyList[position].partyTag2
+        binding.partyTag3Text.text=partyList[position].partyTag3
 
         holder.itemView.setOnClickListener {
             itemClickListener.onClick(it, position)

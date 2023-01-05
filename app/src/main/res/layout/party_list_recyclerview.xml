@@ -136,50 +136,87 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
+            <TextView
                 android:id="@+id/party_tag1"
-                android:layout_width="wrap_content"
+                android:layout_width="68dp"
                 android:layout_height="22dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/pot_tag_btn"
                 android:gravity="center_horizontal"
-                android:textColor="@color/text"
-                android:fontFamily="@font/noto_sans_kr_regular"
-                android:textSize="13dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/party_tag2"
+            <TextView
+                android:id="@+id/party_tag1_text"
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/pot_tag_btn"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="#카공"
                 android:textColor="@color/text"
                 android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/party_tag1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/party_tag2"
+                android:layout_width="68dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/pot_tag_btn"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/party_tag1"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/party_tag3"
+            <TextView
+                android:id="@+id/party_tag2_text"
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
-                android:layout_marginStart="16dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/pot_tag_btn"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="#공무원"
                 android:textColor="@color/text"
                 android:textSize="13dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/party_tag2"
+                app:layout_constraintStart_toStartOf="@+id/party_tag2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/party_tag3"
+                android:layout_width="93dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/pot_tag_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/party_tag2"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/party_tag3_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:gravity="center_horizontal"
+                android:text="#국가고시"
+                android:textColor="@color/text"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/party_tag3"
+                app:layout_constraintStart_toStartOf="@+id/party_tag3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

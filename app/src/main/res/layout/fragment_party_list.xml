@@ -13,103 +13,190 @@
         android:orientation="vertical"
         android:layout_gravity="top|center">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/detail_tag1"
+                android:layout_width="63dp"
                 android:layout_height="23dp"
-                android:minHeight="0dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/choiced_tag_btn"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/choiced_tag_btn"
+                android:gravity="center_horizontal"
+                android:minHeight="0dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_tag1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:gravity="center_horizontal"
+                android:minHeight="0dp"
                 android:text="스터디"
                 android:textAlignment="center"
-                android:gravity="center_horizontal"
                 android:textColor="@color/white"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:textSize="13dp"/>
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/detail_tag1"
+                app:layout_constraintEnd_toEndOf="@+id/detail_tag1"
+                app:layout_constraintStart_toStartOf="@+id/detail_tag1"
+                app:layout_constraintTop_toTopOf="@+id/detail_tag1" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/unchoiced_tag_btn"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:gravity="top|center"
-                android:text="책/독서"
-                android:textColor="@color/tag"
-                android:textSize="13dp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/detail_tag2"
+                android:layout_width="63dp"
                 android:layout_height="23dp"
-                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/unchoiced_tag_btn"
-                android:layout_gravity="center"
-                android:text="클래스 수강"
-                android:gravity="top|center"
-                android:textColor="@color/tag"
+                android:gravity="center_horizontal"
+                android:minHeight="0dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detail_tag1" />
+
+            <TextView
+                android:id="@+id/detail_tag2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/noto_sans_kr_bold"
-                android:textSize="13dp"/>
+                android:gravity="center_horizontal"
+                android:minHeight="0dp"
+                android:text="책/독서"
+                android:textAlignment="center"
+                android:textColor="@color/tag"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/detail_tag2"
+                app:layout_constraintEnd_toEndOf="@+id/detail_tag2"
+                app:layout_constraintStart_toStartOf="@+id/detail_tag2"
+                app:layout_constraintTop_toTopOf="@+id/detail_tag2" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/detail_tag3"
+                android:layout_width="84dp"
+                android:layout_height="23dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/unchoiced_tag_btn"
+                android:gravity="center_horizontal"
+                android:minHeight="0dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detail_tag2" />
 
-        <LinearLayout
+            <TextView
+                android:id="@+id/detail_tag3_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:gravity="center_horizontal"
+                android:minHeight="0dp"
+                android:text="클래스 수강"
+                android:textAlignment="center"
+                android:textColor="@color/tag"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/detail_tag3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/detail_tag3"
+                app:layout_constraintTop_toTopOf="@+id/detail_tag3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/party_all"
+            <TextView
+                android:id="@+id/party_sort1"
                 android:layout_width="79dp"
                 android:layout_height="23dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/pot_tag_btn"
-                android:drawableRight="@drawable/ic_outline_arrow_drop_down_24"
                 android:layout_gravity="center"
-                android:textAlignment="center"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/pot_tag_btn"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/party_sort1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
                 android:text="전체"
                 android:textColor="@color/white"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:textSize="13dp"/>
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/party_sort1"
+                app:layout_constraintEnd_toEndOf="@+id/party_sort1"
+                app:layout_constraintStart_toStartOf="@+id/party_sort1"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/party_km"
-                android:layout_width="86dp"
+            <TextView
+                android:id="@+id/party_sort2"
+                android:layout_width="79dp"
                 android:layout_height="23dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/pot_tag_btn"
-                android:drawableRight="@drawable/ic_outline_arrow_drop_down_24"
                 android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/pot_tag_btn"
+                android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down_24"
+                app:layout_constraintStart_toEndOf="@+id/party_sort1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/party_sort2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
                 android:text="거리 순"
                 android:textColor="@color/white"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:textSize="13dp"/>
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/party_sort2"
+                app:layout_constraintEnd_toEndOf="@+id/party_sort2"
+                app:layout_constraintStart_toStartOf="@+id/party_sort2"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <TextView
                 android:id="@+id/party_map"
-                android:layout_width="wrap_content"
+                android:layout_width="69dp"
                 android:layout_height="23dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/pot_tag_btn"
-                android:drawableLeft="@drawable/ic_outline_map_24"
                 android:layout_gravity="center"
-                android:text="지도"
-                android:textAlignment="center"
-                android:gravity="top|center"
-                android:textColor="@color/white"
-                android:fontFamily="@font/noto_sans_kr_bold"
-                android:textSize="13dp"/>
+                android:layout_marginStart="10dp"
+                android:background="@drawable/pot_tag_btn"
+                app:layout_constraintStart_toEndOf="@+id/party_sort2"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/party_map_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="지도"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@+id/party_map"
+                app:layout_constraintEnd_toEndOf="@+id/party_map"
+                app:layout_constraintStart_toStartOf="@+id/party_map"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/partyRecyclerView"
