@@ -69,7 +69,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_all"
-                android:layout_width="wrap_content"
+                android:layout_width="79dp"
                 android:layout_height="23dp"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/pot_tag_btn"
@@ -83,7 +83,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_km"
-                android:layout_width="wrap_content"
+                android:layout_width="86dp"
                 android:layout_height="23dp"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/pot_tag_btn"
@@ -103,6 +103,7 @@
                 android:drawableLeft="@drawable/ic_outline_map_24"
                 android:layout_gravity="center"
                 android:text="지도"
+                android:textAlignment="center"
                 android:gravity="top|center"
                 android:textColor="@color/white"
                 android:fontFamily="@font/noto_sans_kr_bold"
@@ -117,18 +118,18 @@
             android:layout_margin="10dp"
             android:layout_weight="1"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_baseline_add_24"
-            app:tint="@android:color/white"
-            app:backgroundTint="@color/partyingColor"
-            app:layout_anchor="@+id/partyRecyclerView"
-            app:layout_anchorGravity="end|bottom" />
-
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:tint="@android:color/white"
+        app:backgroundTint="@color/partyingColor"
+        app:layout_anchor="@+id/partyRecyclerView"
+        app:layout_anchorGravity="end|bottom" />
 
 </FrameLayout>

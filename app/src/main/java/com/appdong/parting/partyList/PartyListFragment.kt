@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.appdong.parting.DetailInformationFragment
 import com.appdong.parting.PartyOpenActivity
@@ -24,6 +25,13 @@ class PartyListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+//        val toolbar = (activity as AppCompatActivity?)!!.supportActionBar
+//        toolbar?.setDisplayHomeAsUpEnabled(true) // 액션바 왼쪽에 버튼 만들기(defalut:뒤로가기버튼)
+//        toolbar?.setHomeAsUpIndicator(R.drawable.ic_baseline_keyboard_backspace_24)
+//        toolbar?.setTitle("문화생활팟")
+
+
         _binding = FragmentPartyListBinding.inflate(inflater,container,false)
 //        binding.petListRecyclerView.layoutManager=LinearLayoutManager(requireContext())
 //        binding.petListRecyclerView.adapter= PetListAdapter(pets)

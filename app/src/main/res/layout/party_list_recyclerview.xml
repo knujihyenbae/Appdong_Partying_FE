@@ -47,22 +47,32 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/participate_people"
+            <TextView
+                android:id="@+id/textView2"
                 android:layout_width="41dp"
                 android:layout_height="16dp"
                 android:layout_gravity="center"
-                android:textAlignment="center"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/participate_people_btn"
-                android:fontFamily="@font/noto_sans_kr_regular"
+                android:background="@drawable/choiced_tag_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.476" />
+
+            <TextView
+                android:id="@+id/participate_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
                 android:text="2 / 5"
                 android:textColor="@color/white"
                 android:textSize="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.476" />
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -121,52 +131,57 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_tag1"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/pot_tag_btn"
-                android:fontFamily="@font/noto_sans_kr_regular"
-                android:text="#카공"
-                android:textAlignment="center"
+                android:gravity="center_horizontal"
                 android:textColor="@color/text"
-                android:textSize="13dp" />
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_tag2"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/pot_tag_btn"
-                android:textAlignment="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
+                android:textAlignment="center"
+                android:textColor="@color/text"
                 android:textSize="13dp"
-                android:text="#공무원"
-                android:textColor="@color/text"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/party_tag1"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/party_tag3"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:textAlignment="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/pot_tag_btn"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:text="#국가고시"
+                android:textAlignment="center"
                 android:textColor="@color/text"
-                android:textSize="13dp" />
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/party_tag2"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
