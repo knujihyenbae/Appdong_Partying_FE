@@ -115,7 +115,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
                         android:text="#카공"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -151,7 +150,6 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginBottom="10dp"
-                        card_view:cardBackgroundColor="#f7f2f3"
                         card_view:cardCornerRadius="12dp"
                         card_view:cardElevation="3dp"
                         card_view:contentPadding="4dp">
@@ -194,7 +192,6 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginBottom="10dp"
-                        card_view:cardBackgroundColor="#f7f2f3"
                         card_view:cardCornerRadius="12dp"
                         card_view:cardElevation="3dp"
                         card_view:contentPadding="4dp">
@@ -293,7 +290,6 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginBottom="10dp"
-                        card_view:cardBackgroundColor="#f7f2f3"
                         card_view:cardCornerRadius="12dp"
                         card_view:cardElevation="3dp"
                         card_view:contentPadding="4dp">
