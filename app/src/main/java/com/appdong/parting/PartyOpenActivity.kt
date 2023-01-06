@@ -1,24 +1,34 @@
 package com.appdong.parting
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.ProgressDialog.show
 import android.app.TimePickerDialog
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.appdong.parting.databinding.ActivityPartyOpenBinding
+import com.bumptech.glide.Glide.init
 import com.google.android.material.datepicker.MaterialDatePicker.Builder.datePicker
+import com.google.android.material.internal.ViewUtils.hideKeyboard
 import java.time.Clock
 import java.util.*
 import kotlin.collections.ArrayList
 
+
+var category = 0
 
 class PartyOpenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPartyOpenBinding
@@ -30,13 +40,15 @@ class PartyOpenActivity : AppCompatActivity() {
     private lateinit var categoryItemList: ArrayList<CategoryItem>
     private lateinit var categoryItemAdapter: CategoryItemAdapter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPartyOpenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         // 좌측 최상단 백버튼
-        binding.backBtn.setOnClickListener(){
+        binding.activityPartyBackBtn.setOnClickListener(){
             onBackPressed()
             Log.d("jhb","파티 개설 뒤로가기")
         }
@@ -44,10 +56,6 @@ class PartyOpenActivity : AppCompatActivity() {
         // 모임 테마 설정 리사이클러뷰 item 선택 init1으로 가세요~
         // 세부 카테고리 리사이클러뷰 item 선택 init2로 가세요!
 
-        // 파티 등록 완료 클릭 리스너
-        binding.partyOpenFinish.setOnClickListener(){
-            Log.d("jhb","파티 등록 완료 버튼 클릭")
-        }
 
         // partyTitleEditText 글자 컨트롤러
         PartyTitleEditTextController()
@@ -92,17 +100,23 @@ class PartyOpenActivity : AppCompatActivity() {
         }
 
         // 모임 테마 설정 리싸이클러
-        init()
+        init1()
 
         // 세부 카테고리 리싸이클러
         init2()
+
+        // 파티 등록 완료
+        binding.activityPartyOpenRegistrationComplete.setOnClickListener(){
+            Log.d("jhb", "파티 등록 완료")
+        }
 
 
     }
 
 
 
-    private fun init() {
+
+    private fun init1() {
         recyclerView = binding.recyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = GridLayoutManager(this, 4)
@@ -123,14 +137,39 @@ class PartyOpenActivity : AppCompatActivity() {
                 Log.d("jhb", "${partyItemList[position].name}")
 
                 when(partyItemList[position]){
-                    partyItemList[0] -> {Log.d("jhb", "${partyItemList[0].name}")}
-                    partyItemList[1] -> {Log.d("jhb", "${partyItemList[1].name}")}
-                    partyItemList[2] -> {Log.d("jhb", "${partyItemList[2].name}")}
-                    partyItemList[3] -> {Log.d("jhb", "${partyItemList[3].name}")}
-                    partyItemList[4] -> {Log.d("jhb", "${partyItemList[4].name}")}
-                    partyItemList[5] -> {Log.d("jhb", "${partyItemList[5].name}")}
-                    partyItemList[6] -> {Log.d("jhb", "${partyItemList[6].name}")}
-                    partyItemList[7] -> {Log.d("jhb", "${partyItemList[7].name}")}
+                    partyItemList[0] -> {
+                        Log.d("jhb", "${partyItemList[0].name}")
+                        //1번 모임 테마 눌렀을 때 1번에 해당하는 세부 카테고리가 가 나와야한다.
+                        category = 0
+                    }
+                    partyItemList[1] -> {
+                        Log.d("jhb", "${partyItemList[1].name}")
+                        category = 1
+                    }
+                    partyItemList[2] -> {
+                        Log.d("jhb", "${partyItemList[2].name}")
+                        category = 2
+                    }
+                    partyItemList[3] -> {
+                        Log.d("jhb", "${partyItemList[3].name}")
+                        category = 3
+                    }
+                    partyItemList[4] -> {
+                        Log.d("jhb", "${partyItemList[4].name}")
+                        category = 4
+                    }
+                    partyItemList[5] -> {
+                        Log.d("jhb", "${partyItemList[5].name}")
+                        category = 5
+                    }
+                    partyItemList[6] -> {
+                        Log.d("jhb", "${partyItemList[6].name}")
+                        category = 6
+                    }
+                    partyItemList[7] -> {
+                        Log.d("jhb", "${partyItemList[7].name}")
+                        category = 7
+                    }
 
                     else -> {}
                 }
@@ -155,7 +194,7 @@ class PartyOpenActivity : AppCompatActivity() {
     private fun init2() {
         recyclerView = binding.recyclerViewCategory
         recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL)
+        recyclerView.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
         categoryItemList = ArrayList()
         addDataToCategoryList()
 
@@ -177,6 +216,9 @@ class PartyOpenActivity : AppCompatActivity() {
                     categoryItemList[3] -> {Log.d("jhb", "${categoryItemList[3].name}")}
                     categoryItemList[4] -> {Log.d("jhb", "${categoryItemList[4].name}")}
                     categoryItemList[5] -> {Log.d("jhb", "${categoryItemList[5].name}")}
+                    categoryItemList[6] -> {Log.d("jhb", "${categoryItemList[6].name}")}
+                    categoryItemList[7] -> {Log.d("jhb", "${categoryItemList[7].name}")}
+
 
                     else -> {}
                 }
@@ -186,24 +228,88 @@ class PartyOpenActivity : AppCompatActivity() {
     }
 
     private fun addDataToCategoryList() {
-        categoryItemList.add(CategoryItem("룸카페"))
-        categoryItemList.add(CategoryItem("드로잉 카페"))
-        categoryItemList.add(CategoryItem("동물 카페"))
-        categoryItemList.add(CategoryItem("스터디 카페"))
-        categoryItemList.add(CategoryItem("만화 카페"))
-        categoryItemList.add(CategoryItem("디저트 카페"))
+        //액티비티를 종료했다가 다시들어가면 바뀜
+        when(category) {
+            0 -> {
+                categoryItemList.add(CategoryItem("문화생활1"))
+                categoryItemList.add(CategoryItem("문화생활2"))
+                categoryItemList.add(CategoryItem("문화생활3"))
+                categoryItemList.add(CategoryItem("문화생활4"))
+                categoryItemList.add(CategoryItem("문화생활5"))
+                categoryItemList.add(CategoryItem("문화생활6"))
+            }
+            1 -> {
+                categoryItemList.add(CategoryItem("영화"))
+                categoryItemList.add(CategoryItem("뮤지컬"))
+                categoryItemList.add(CategoryItem("콘서트"))
+                categoryItemList.add(CategoryItem("박람회"))
+                categoryItemList.add(CategoryItem("연극"))
+                categoryItemList.add(CategoryItem("클래식/무용"))
+                categoryItemList.add(CategoryItem("전시/행사"))
+            }
+            2 -> {
+                categoryItemList.add(CategoryItem("코딩"))
+                categoryItemList.add(CategoryItem("프로그래밍"))
+                categoryItemList.add(CategoryItem("과제"))
+                categoryItemList.add(CategoryItem("모각코"))
+                categoryItemList.add(CategoryItem("전공공부"))
+                categoryItemList.add(CategoryItem("교양공부"))
+            }
+            3 -> {
+                categoryItemList.add(CategoryItem("한식"))
+                categoryItemList.add(CategoryItem("중식"))
+                categoryItemList.add(CategoryItem("양식"))
+                categoryItemList.add(CategoryItem("일식"))
+                categoryItemList.add(CategoryItem("패스트푸드"))
+                categoryItemList.add(CategoryItem("치킨/피자"))
+            }
+            4 -> {
+                categoryItemList.add(CategoryItem("헬스장"))
+                categoryItemList.add(CategoryItem("등산"))
+                categoryItemList.add(CategoryItem("요가"))
+                categoryItemList.add(CategoryItem("스트레칭"))
+                categoryItemList.add(CategoryItem("달리기"))
+                categoryItemList.add(CategoryItem("수영"))
+            }
+            5 -> {
+                categoryItemList.add(CategoryItem("PC방"))
+                categoryItemList.add(CategoryItem("보드게임"))
+                categoryItemList.add(CategoryItem("콘솔게임"))
+                categoryItemList.add(CategoryItem("오락실"))
+                categoryItemList.add(CategoryItem("노래방"))
+                categoryItemList.add(CategoryItem("볼링장"))
+            }
+            6 -> {
+                categoryItemList.add(CategoryItem("룸카페"))
+                categoryItemList.add(CategoryItem("드로잉 카페"))
+                categoryItemList.add(CategoryItem("동물 카페"))
+                categoryItemList.add(CategoryItem("스터디 카페"))
+                categoryItemList.add(CategoryItem("만화 카페"))
+                categoryItemList.add(CategoryItem("디저트 카페"))
+            }
+            7 -> {
+                categoryItemList.add(CategoryItem("소주"))
+                categoryItemList.add(CategoryItem("맥주"))
+                categoryItemList.add(CategoryItem("양주"))
+                categoryItemList.add(CategoryItem("헌팅포차"))
+                categoryItemList.add(CategoryItem("감성주점"))
+                categoryItemList.add(CategoryItem("편맥"))
+            }
+            else -> {}
+        }
+
 
     }
 
     private fun PartyTitleEditTextController(){
-        binding.partyTitleEditText.addTextChangedListener(object : TextWatcher{
+        binding.activityPartyOpenPartyTitleEditText.addTextChangedListener(object : TextWatcher{
             var maxText = ""
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 maxText = s.toString()
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val partyTitleEditText = binding.partyTitleEditText
+                val partyTitleEditText = binding.activityPartyOpenPartyTitleEditText
                 val partyTitleEditTextCounter = binding.partyTitleEditTextCounter
 
                 if(partyTitleEditText.lineCount > 1){
@@ -290,6 +396,5 @@ class PartyOpenActivity : AppCompatActivity() {
             })
         }
     }
-
 
 }
