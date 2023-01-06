@@ -65,6 +65,16 @@ class PartyListFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.partySort1.setOnClickListener {
+            val bottomSheet = PartySortDialog1Fragment()
+            bottomSheet.show(childFragmentManager, bottomSheet.tag)
+        }
+
+        binding.partySort2.setOnClickListener {
+            val bottomSheet = PartySortDialog2Fragment()
+            bottomSheet.show(childFragmentManager, bottomSheet.tag)
+        }
+
         return binding.root
     }
     private fun loadFragment(fragment: Fragment){
