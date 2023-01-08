@@ -27,6 +27,8 @@ class PartySortDialog2Fragment() : BottomSheetDialogFragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_party_sort_dialog2, container, false)
 
+        container?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
