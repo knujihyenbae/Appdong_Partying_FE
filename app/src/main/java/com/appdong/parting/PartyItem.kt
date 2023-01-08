@@ -1,4 +1,4 @@
 package com.appdong.parting
 
-data class PartyItem(val image:Int, val name:String, )
+data class PartyItem(val image:Int, val name:String, val color: Int)
 

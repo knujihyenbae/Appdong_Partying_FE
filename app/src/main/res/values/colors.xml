@@ -8,4 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="partyingColor">#FF9090</color>
+
+
+    <color name="party_1">#FBA06D</color>
+    <color name="party_2">#FF3C6A</color>
+    <color name="party_3">#A2E36F</color>
+    <color name="party_4">#53C9B4</color>
+    <color name="party_5">#FF5353</color>
+    <color name="party_6">#66CBEB</color>
+    <color name="party_7">#B27365</color>
+    <color name="party_8">#F4CC65</color>
 </resources>

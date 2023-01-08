@@ -1,10 +1,14 @@
 package com.appdong.parting
 
 import android.app.LauncherActivity.ListItem
+import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class CategoryItemAdapter(private val categoryItemList: ArrayList<CategoryItem>) :
@@ -30,6 +34,9 @@ class CategoryItemAdapter(private val categoryItemList: ArrayList<CategoryItem>)
         holder.itemView.setOnClickListener{
             itemClickListener.onClick(it, position)
         }
+
+
+
     }
     // 3-(2) 리스너 인터페이스
     interface OnItemClickListener {
@@ -49,6 +56,7 @@ class CategoryItemAdapter(private val categoryItemList: ArrayList<CategoryItem>)
     // (4) 레이아웃 내 View 연결
     class CategoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textView : TextView = itemView.findViewById(R.id.textView_category)
+        val itemCategoryConstraintLayout : ConstraintLayout = itemView.findViewById(R.id.item_category_constraintlayout)
     }
 
 

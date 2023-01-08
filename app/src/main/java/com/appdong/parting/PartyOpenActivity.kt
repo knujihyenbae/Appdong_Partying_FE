@@ -16,6 +16,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -132,7 +133,6 @@ class PartyOpenActivity : AppCompatActivity() {
         partyItemAdapter.setItemClickListener(object: PartyItemAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
 
-
                 //클릭 시 이벤트 작성
                 Log.d("jhb", "${partyItemList[position].name}")
 
@@ -180,14 +180,14 @@ class PartyOpenActivity : AppCompatActivity() {
     }
 
     private fun addDataToList() {
-        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟",))
-        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟", ))
-        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟", ))
+        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟", R.color.black))
+        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟", R.color.white))
+        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟", R.color.white))
+        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟", R.color.white))
+        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟", R.color.white))
+        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟", R.color.white))
+        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟", R.color.white))
+        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟", R.color.white))
        
     }
 
@@ -210,7 +210,9 @@ class PartyOpenActivity : AppCompatActivity() {
                 Log.d("jhb", "${categoryItemList[position].name}")
 
                 when(categoryItemList[position]){
-                    categoryItemList[0] -> {Log.d("jhb", "${categoryItemList[0].name}")}
+                    categoryItemList[0] -> {
+                        Log.d("jhb", "${categoryItemList[0].name}")
+                    }
                     categoryItemList[1] -> {Log.d("jhb", "${categoryItemList[1].name}")}
                     categoryItemList[2] -> {Log.d("jhb", "${categoryItemList[2].name}")}
                     categoryItemList[3] -> {Log.d("jhb", "${categoryItemList[3].name}")}

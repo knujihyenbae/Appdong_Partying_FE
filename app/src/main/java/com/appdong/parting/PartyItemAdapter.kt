@@ -1,20 +1,28 @@
 package com.appdong.parting
 
+import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+
+
 
 class PartyItemAdapter(private val partyItemList:ArrayList<PartyItem>) :
     RecyclerView.Adapter<PartyItemAdapter.PartyItemViewHolder>() {
-
 
     // (1) 아이템 레이아웃과 결합
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PartyItemViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_party, parent, false)
         return PartyItemViewHolder(view)
+
     }
 
     // (2) 리스트내 아이템 개수
@@ -24,9 +32,12 @@ class PartyItemAdapter(private val partyItemList:ArrayList<PartyItem>) :
 
     // (3) view에 내용 입력
     override fun onBindViewHolder(holder: PartyItemViewHolder, position: Int) {
+        val context = holder.partyImgSpace.context
+
         val partyItem = partyItemList[position]
         holder.imageView.setImageResource(partyItem.image)
         holder.textView.text = partyItem.name
+        holder.partyImgSpace.backgroundTintList = ContextCompat.getColorStateList(context, partyItem.color)
 
         // 3-(1) 리스트 내 항목 클릭 시 onClick() 호출
         holder.itemView.setOnClickListener{
@@ -52,6 +63,7 @@ class PartyItemAdapter(private val partyItemList:ArrayList<PartyItem>) :
     class PartyItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageView : ImageView = itemView.findViewById(R.id.imageView)
         val textView : TextView = itemView.findViewById(R.id.textView)
+        val partyImgSpace : ConstraintLayout = itemView.findViewById(R.id.partyImgSpace)
     }
 
 }

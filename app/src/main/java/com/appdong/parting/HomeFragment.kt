@@ -3,6 +3,7 @@ package com.appdong.parting
 import android.content.Context
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
@@ -11,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,6 +49,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         // 검색바 관련
         search()
 
@@ -72,20 +75,22 @@ class HomeFragment : Fragment() {
 
 
     private fun init() {
+        //fragmentHomeRecyclerView 바인딩 하고 설정
         recyclerView = binding.fragmentHomeRecyclerView
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = GridLayoutManager(activity, 4)
 
+        //partyItemList랑 partyItemAdapter 설정
         partyItemList = ArrayList()
         addDataToList()
 
         partyItemAdapter = PartyItemAdapter(partyItemList)
         recyclerView.adapter = partyItemAdapter
 
+
         // 카테고리 아이템 어뎁터 / setItemClickListner 호출 하고 / OnItemClickListener를 익명 개체로 넘겨준다.
         partyItemAdapter.setItemClickListener(object: PartyItemAdapter.OnItemClickListener{
             override fun onClick(v: View, position: Int) {
-
 
                 //전체클릭 시 이벤트 작성
                 Log.d("jhb", "${partyItemList[position].name}")
@@ -118,15 +123,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟"))
-        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟"))
-        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟"))
-        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟"))
-        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟"))
-        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟"))
-        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟"))
-        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟"))
-
+        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟", R.color.party_1))
+        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟", R.color.party_2))
+        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟", R.color.party_3))
+        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟", R.color.party_4))
+        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟", R.color.party_5))
+        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟", R.color.party_6))
+        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟", R.color.party_7))
+        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟", R.color.party_8))
     }
 
 
