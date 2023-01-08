@@ -179,17 +179,18 @@ class PartyOpenActivity : AppCompatActivity() {
 
     }
 
+
     private fun addDataToList() {
-        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟", R.color.black))
-        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟", R.color.white))
-        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟", R.color.white))
-        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟", R.color.white))
-        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟", R.color.white))
-        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟", R.color.white))
-        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟", R.color.white))
-        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟", R.color.white))
-       
+        partyItemList.add(PartyItem(R.drawable.party_culture, "문화생활팟", R.color.party_1))
+        partyItemList.add(PartyItem(R.drawable.party_watching, "관람팟", R.color.party_2))
+        partyItemList.add(PartyItem(R.drawable.party_develop, "자기개발팟", R.color.party_3))
+        partyItemList.add(PartyItem(R.drawable.party_eat, "한입팟", R.color.party_4))
+        partyItemList.add(PartyItem(R.drawable.party_health, "운동팟", R.color.party_5))
+        partyItemList.add(PartyItem(R.drawable.party_game, "오락팟", R.color.party_6))
+        partyItemList.add(PartyItem(R.drawable.party_cafe, "카페팟", R.color.party_7))
+        partyItemList.add(PartyItem(R.drawable.party_drunk, "한잔팟", R.color.party_8))
     }
+
 
     private fun init2() {
         recyclerView = binding.recyclerViewCategory
