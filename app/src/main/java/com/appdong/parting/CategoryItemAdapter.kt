@@ -2,6 +2,7 @@ package com.appdong.parting
 
 import android.app.LauncherActivity.ListItem
 import android.content.Context
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
@@ -30,9 +31,15 @@ class CategoryItemAdapter(private val categoryItemList: ArrayList<CategoryItem>)
         val categoryItem = categoryItemList[position]
         holder.textView.text = categoryItem.name
 
+
+        val context = holder.itemCategoryConstraintLayout.context
+
         // 3-(1) 리스트 내 항목 클릭 시 onClick() 호출
         holder.itemView.setOnClickListener{
             itemClickListener.onClick(it, position)
+
+            holder.itemCategoryConstraintLayout.backgroundTintList = ContextCompat.getColorStateList(context, R.color.partyingColor)
+
         }
 
 

@@ -213,6 +213,7 @@ class PartyOpenActivity : AppCompatActivity() {
                 when(categoryItemList[position]){
                     categoryItemList[0] -> {
                         Log.d("jhb", "${categoryItemList[0].name}")
+                        
                     }
                     categoryItemList[1] -> {Log.d("jhb", "${categoryItemList[1].name}")}
                     categoryItemList[2] -> {Log.d("jhb", "${categoryItemList[2].name}")}
