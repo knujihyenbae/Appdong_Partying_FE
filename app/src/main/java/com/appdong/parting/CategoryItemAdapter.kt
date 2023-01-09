@@ -1,5 +1,6 @@
 package com.appdong.parting
 
+import android.annotation.SuppressLint
 import android.app.LauncherActivity.ListItem
 import android.content.Context
 import android.graphics.Color
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CategoryItemAdapter(private val categoryItemList: ArrayList<CategoryItem>) :
         RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>(){
+    //셀렉트 포지션 변수
+    private var selectedItmePosition: CategoryItem? = null
 
     // (1) 아이템 레이아웃과 결합
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryItemViewHolder {
@@ -27,7 +30,7 @@ class CategoryItemAdapter(private val categoryItemList: ArrayList<CategoryItem>)
     }
 
     // (3) view에 내용 입력
-    override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CategoryItemViewHolder, @SuppressLint("RecyclerView") position: Int) {
         val categoryItem = categoryItemList[position]
         holder.textView.text = categoryItem.name
 
@@ -38,9 +41,17 @@ class CategoryItemAdapter(private val categoryItemList: ArrayList<CategoryItem>)
         holder.itemView.setOnClickListener{
             itemClickListener.onClick(it, position)
 
+
+            selectedItmePosition = categoryItemList[position]
+            notifyDataSetChanged()
+        }
+        if (selectedItmePosition == categoryItemList[position]){
             holder.itemCategoryConstraintLayout.backgroundTintList = ContextCompat.getColorStateList(context, R.color.partyingColor)
+        }else{
+            holder.itemCategoryConstraintLayout.backgroundTintList = ContextCompat.getColorStateList(context, R.color.detailcategoryunclick)
 
         }
+
 
 
 

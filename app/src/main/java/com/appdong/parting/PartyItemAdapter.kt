@@ -42,6 +42,7 @@ class PartyItemAdapter(private val partyItemList:ArrayList<PartyItem>) :
         // 3-(1) 리스트 내 항목 클릭 시 onClick() 호출
         holder.itemView.setOnClickListener{
             itemClickListener.onClick(it, position)
+
         }
     }
 

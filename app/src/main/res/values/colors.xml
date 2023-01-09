@@ -18,4 +18,6 @@
     <color name="party_6">#66CBEB</color>
     <color name="party_7">#B27365</color>
     <color name="party_8">#F4CC65</color>
+
+    <color name="detailcategoryunclick">#D9D9E2</color>
 </resources>
