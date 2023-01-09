@@ -135,6 +135,8 @@ class PartyOpenActivity : AppCompatActivity() {
 
                 //클릭 시 이벤트 작성
                 Log.d("jhb", "${partyItemList[position].name}")
+                //
+                init2()
 
                 when(partyItemList[position]){
                     partyItemList[0] -> {
@@ -149,26 +151,32 @@ class PartyOpenActivity : AppCompatActivity() {
                     partyItemList[2] -> {
                         Log.d("jhb", "${partyItemList[2].name}")
                         category = 2
+
                     }
                     partyItemList[3] -> {
                         Log.d("jhb", "${partyItemList[3].name}")
                         category = 3
+
                     }
                     partyItemList[4] -> {
                         Log.d("jhb", "${partyItemList[4].name}")
                         category = 4
+
                     }
                     partyItemList[5] -> {
                         Log.d("jhb", "${partyItemList[5].name}")
                         category = 5
+
                     }
                     partyItemList[6] -> {
                         Log.d("jhb", "${partyItemList[6].name}")
                         category = 6
+
                     }
                     partyItemList[7] -> {
                         Log.d("jhb", "${partyItemList[7].name}")
                         category = 7
+
                     }
 
                     else -> {}
