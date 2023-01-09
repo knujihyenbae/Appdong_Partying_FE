@@ -29,7 +29,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-var category = 0
+var category = 8
 
 class PartyOpenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPartyOpenBinding
@@ -135,47 +135,64 @@ class PartyOpenActivity : AppCompatActivity() {
 
                 //클릭 시 이벤트 작성
                 Log.d("jhb", "${partyItemList[position].name}")
-                //
-                init2()
+
+                //when 에다가 각각 init2()를 달아서 새로 함수를 실행하게 해주는거지 맞지 ㅇㅇ
+                //init2()안에 dataList가 있으니깐 그것도 when으로 돌려서 category에 맞게 등장함~
 
                 when(partyItemList[position]){
                     partyItemList[0] -> {
                         Log.d("jhb", "${partyItemList[0].name}")
                         //1번 모임 테마 눌렀을 때 1번에 해당하는 세부 카테고리가 가 나와야한다.
                         category = 0
+                        init2()
+
                     }
                     partyItemList[1] -> {
                         Log.d("jhb", "${partyItemList[1].name}")
                         category = 1
+                        init2()
+
                     }
                     partyItemList[2] -> {
                         Log.d("jhb", "${partyItemList[2].name}")
                         category = 2
+                        init2()
+
 
                     }
                     partyItemList[3] -> {
                         Log.d("jhb", "${partyItemList[3].name}")
                         category = 3
+                        init2()
+
 
                     }
                     partyItemList[4] -> {
                         Log.d("jhb", "${partyItemList[4].name}")
                         category = 4
+                        init2()
+
 
                     }
                     partyItemList[5] -> {
                         Log.d("jhb", "${partyItemList[5].name}")
                         category = 5
+                        init2()
+
 
                     }
                     partyItemList[6] -> {
                         Log.d("jhb", "${partyItemList[6].name}")
                         category = 6
+                        init2()
+
 
                     }
                     partyItemList[7] -> {
                         Log.d("jhb", "${partyItemList[7].name}")
                         category = 7
+                        init2()
+
 
                     }
 
@@ -240,7 +257,6 @@ class PartyOpenActivity : AppCompatActivity() {
     }
 
     private fun addDataToCategoryList() {
-        //액티비티를 종료했다가 다시들어가면 바뀜
         when(category) {
             0 -> {
                 categoryItemList.add(CategoryItem("문화생활1"))
@@ -306,6 +322,9 @@ class PartyOpenActivity : AppCompatActivity() {
                 categoryItemList.add(CategoryItem("헌팅포차"))
                 categoryItemList.add(CategoryItem("감성주점"))
                 categoryItemList.add(CategoryItem("편맥"))
+            }
+            8 -> {
+
             }
             else -> {}
         }
