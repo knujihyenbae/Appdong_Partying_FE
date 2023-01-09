@@ -29,7 +29,6 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-var category = 8
 
 class PartyOpenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPartyOpenBinding
@@ -41,11 +40,13 @@ class PartyOpenActivity : AppCompatActivity() {
     private lateinit var categoryItemList: ArrayList<CategoryItem>
     private lateinit var categoryItemAdapter: CategoryItemAdapter
 
+    var category = 8
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPartyOpenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
 
         // 좌측 최상단 백버튼
